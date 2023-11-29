@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/public/style.css/">
+   <title>%name%</title>
+</head>
+<body>
+   <header>
+      <h1>%name%</h1>
+      <h3>%species% - %gender%</h3>
+   </header>
+   <section>
+      <h2>Occupation:</h2>
+      <p>%occupation%</p>
+   </section>
+   <section>
+      <h2>Personality Traits:</h2>
+      <ul>
+         %personalityTraits%
+      </ul>
+   </section>
+</body>
+</html>
