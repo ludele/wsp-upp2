@@ -29,6 +29,19 @@ let leodoreLionheart = {
   url: '/characters/leodore-lionheart'
 };
 
+function applyTraitsToTemplate(character, template) {
+  Object.keys(character).forEach((trait) => {
+    if (trait === 'personalityTraits') {
+      let traitsList = character[trait].map(trait => `<li>${trait}</li>`).join('');
+      template = ReplaceTemplate(trait, traitsList, template);
+    } else {
+      template = ReplaceTemplate(trait, character[trait], template);
+    }
+  });
+
+  return template;
+}
+
 exports.handleCharacterRoute = async function (pathSegments, request, response) {
 
   function statusCodeResponse(code, value, type) {
@@ -57,6 +70,8 @@ exports.handleCharacterRoute = async function (pathSegments, request, response) 
 
   let seg = pathSegments.shift();
   let template = (await fs.readFile(templatePath)).toString();
+
+
 
   switch (seg) {
     case "judy-hopps":
